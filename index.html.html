@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>My Portfolio | AI & ML Engineering Student</title>
+  <style>
+    {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f8fafc;
+      color: #0f172a;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
+
+    
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    
+    section {
+      padding: 4rem 0;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    section:last-child {
+      border-bottom: none;
+    }
+
+    
+    h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #1e293b, #3b82f6);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    h2 {
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 2rem;
+      border-left: 5px solid #3b82f6;
+      padding-left: 1rem;
+      color: #0f172a;
+    }
+
+    h3 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: #1e293b;
+    }
+
+    
+    header {
+      background: white;
+      box-shadow: 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(2px);
+      background: rgba(255, 255, 255, 0.95);
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 1.6rem;
+      font-weight: 700;
+      background: linear-gradient(120deg, #2563eb, #1e40af);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 500;
+      color: #334155;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: #2563eb;
+    }
+
+    
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+
+    .hero-content {
+      flex: 1;
+    }
+
+    .hero-content p {
+      font-size: 1.2rem;
+      color: #475569;
+      margin: 1rem 0 1.5rem 0;
+    }
+
+    .hero-image {
+      flex: 0.8;
+      text-align: center;
+    }
+
+    .avatar {
+      width: 220px;
+      height: 220px;
+      background: linear-gradient(145deg, #e0e7ff, #cbd5e1);
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 5rem;
+      font-weight: 500;
+      color: #1e40af;
+      box-shadow: 0 20px 25px -12px rgba(0, 0, 0, 0.1);
+      border: 3px solid white;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #2563eb;
+      color: white;
+      padding: 0.7rem 1.5rem;
+      border-radius: 40px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background 0.2s, transform 0.1s;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    }
+
+    .btn:hover {
+      background: #1d4ed8;
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 1px solid #2563eb;
+      color: #2563eb;
+      margin-left: 1rem;
+    }
+
+    .btn-outline:hover {
+      background: #eff6ff;
+      transform: translateY(-2px);
+    }
+
+    
+    .about-text {
+      background: white;
+      padding: 1.8rem;
+      border-radius: 24px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.02);
+      border: 1px solid #eef2ff;
+    }
+
+    .about-text p {
+      margin-bottom: 1rem;
+      font-size: 1.05rem;
+    }
+
+   
+    .skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      margin-top: 0.5rem;
+    }
+
+    .skill-card {
+      background: white;
+      padding: 0.8rem 1.6rem;
+      border-radius: 60px;
+      font-weight: 500;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
+      border: 1px solid #e2e8f0;
+    }
+
+    .skill-card:hover {
+      border-color: #3b82f6;
+      background: #f0f9ff;
+    
+    }
+
+    
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .project-card {
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 15px -6px rgba(0, 0, 0, 0.05);
+      border: 1px solid #eef2ff;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 25px -12px rgba(0, 0, 0, 0.1);
+    }
+
+    .project-img {
+      background: linear-gradient(145deg, #d9e6ff, #b9d0f8);
+      height: 160px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+    }
+
+    .project-info {
+      padding: 1.5rem;
+    }
+
+    .project-info p {
+      color: #475569;
+      margin: 0.5rem 0 1rem;
+    }
+
+    .project-tag {
+      font-size: 0.8rem;
+      background: #e6f0ff;
+      display: inline-block;
+      padding: 0.2rem 0.8rem;
+      border-radius: 30px;
+      color: #1e40af;
+    }
+
+    
+    .contact-flex {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: space-between;
+      background: white;
+      padding: 2rem;
+      border-radius: 28px;
+      border: 1px solid #e2e8f0;
+    }
+
+    .contact-info {
+      flex: 1;
+    }
+
+    .contact-detail {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      margin-bottom: 1.2rem;
+      font-size: 1rem;
+    }
+
+    .contact-detail span:first-child {
+      font-weight: 600;
+      min-width: 70px;
+      color: #1e293b;
+    }
+
+    .social-links {
+      margin-top: 1.8rem;
+      display: flex;
+      gap: 1rem;
+    }
+
+    .social-icon {
+      background: #f1f5f9;
+      padding: 0.5rem 1rem;
+      border-radius: 40px;
+      text-decoration: none;
+      color: #1e293b;
+      font-weight: 500;
+    }
+
+    .social-icon:hover {
+      background: #e2e8f0;
+      color: #2563eb;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 0;
+      background: white;
+      border-top: 1px solid #e2e8f0;
+      color: #475569;
+      font-size: 0.9rem;
+    }
+
+    
+    @media (max-width: 700px) {
+      nav {
+        flex-direction: column;
+        gap: 0.8rem;
+      }
+      .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+      }
+      .hero-content .btn {
+        margin: 0.3rem;
+      }
+      .btn-outline {
+        margin-left: 0;
+      }
+      h1 {
+        font-size: 2.2rem;
+      }
+      h2 {
+        font-size: 1.7rem;
+      }
+      .container {
+        padding: 0 1.2rem;
+      }
+      .contact-flex {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <nav>
+      <div class="logo">✨ Aman Shaikh </div>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+ 
+  <section id="home">
+    <div class="container hero">
+      <div class="hero-content">
+        <h1>Hi, I'm Aman 👋</h1>
+        <p>First-year AI & ML Engineering student | Passionate about building smart solutions & creative tech.</p>
+        <div>
+          <a href="#projects" class="btn">View Projects</a>
+          <a href="#contact" class="btn btn-outline">Get in touch</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <div class="avatar">🤖</div>
+      </div>
+    </div>
+  </section>
+
+ 
+  <section id="about">
+    <div class="container">
+      <h2>About Me</h2>
+      <div class="about-text">
+        <p>Hello! I'm Aman, currently pursuing my Bachelor's in Artificial Intelligence & Machine Learning Engineering. I am fascinated by how machines learn and how we can use data to create intelligent systems that help people.</p>
+        <p>As a first-year student, I've been exploring Python, basics of web development, and the fundamentals of AI. I love building small projects that solve real problems — from simple ML models to creative front-end designs. My goal is to combine AI with human-centric design to build useful tools.</p>
+        <p>When I'm not coding, you'll find me reading about new tech trends, solving puzzles, or sketching. I believe in lifelong learning and teamwork.</p>
+      </div>
+    </div>
+  </section>
+
+  
+  <section id="skills">
+    <div class="container">
+      <h2>Tech & Tools I'm Learning</h2>
+      <div class="skills-grid">
+        <span class="skill-card">🐍 Python</span>
+        <span class="skill-card">📊 Pandas / NumPy</span>
+        <span class="skill-card">🤖 Scikit-learn (basics)</span>
+        <span class="skill-card">🌐 HTML & CSS</span>
+        <span class="skill-card">🎨 JavaScript (beginner)</span>
+        <span class="skill-card">🗄️ SQLite</span>
+        <span class="skill-card">📈 C & C++</span>
+        <span class="skill-card">⚙️ Git & GitHub</span>
+      </div>
+    </div>
+  </section>
+
+  
+  <section id="projects">
+    <div class="container">
+      <h2>Featured Projects</h2>
+      <div class="projects-grid">
+        
+        <div class="project-card">
+          <div class="project-img">📊</div>
+          <div class="project-info">
+            <h3>Student Grade Predictor</h3>
+            <p>A simple ML model that predicts student performance based on study hours and previous scores. Built with Python and scikit-learn.</p>
+            <span class="project-tag">Python | AI basics</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-img">🌿</div>
+          <div class="project-info">
+            <h3>Plant Watering Reminder</h3>
+            <p>Web based interactive tracker to remind users to water plants. HTML, CSS, and a touch of JavaScript for dynamic updates.</p>
+            <span class="project-tag">HTML/CSS/JS</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-img">📁</div>
+          <div class="project-info">
+            <h3>Personal Portfolio Website</h3>
+            <p>Responsive portfolio to showcase my journey as an AI&ML student. Clean design and smooth navigation.</p>
+            <span class="project-tag">HTML5 & CSS3</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-img">💬</div>
+          <div class="project-info">
+            <h3>Chatbot for FAQs</h3>
+            <p>Rule-based chatbot using Python that answers common questions about AI courses. Great for practicing logic.</p>
+            <span class="project-tag">Python | Logic</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+ 
+  <section id="contact">
+    <div class="container">
+      <h2>Let's Connect</h2>
+      <div class="contact-flex">
+        <div class="contact-info">
+          <div class="contact-detail"><span>📧 Email:</span> amanjshaikh6106@gmail.com</div>
+          <div class="contact-detail"><span>📞 Phone:</span> +91 9834295369</div>
+          <div class="contact-detail"><span>📍 Location:</span> Pune, India</div>
+          <div class="social-links">
+            <a href="#" class="social-icon">GitHub</a>
+            <a href="#" class="social-icon">LinkedIn</a>
+            <a href="#" class="social-icon">Twitter</a>
+          </div>
+        </div>
+        <div style="flex: 1; background: #f8fafc; padding: 1rem; border-radius: 20px;">
+          <p style="margin-bottom: 0.8rem; font-weight: 500;">📬 Open for collaborations, internships & tech talks!</p>
+          <p style="font-size: 0.9rem; color: #334155;">Feel free to reach out — I usually reply within 24 hours.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <p>© 202501110112 Shaikh Aman — AI & ML Engineering Student. Built with 💙 using HTML & CSS.</p>
+  </div>
+</footer>
+
+</body>
+</html>
